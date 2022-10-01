@@ -1,8 +1,12 @@
-const API_KEY = "AIzaSyDZeBxnHRZXj4kRHcDuJW57y2vUsZxoHS4";
+const API_KEY = "AIzaSyDZeBxnHRZXj4kRHcDuJW57y2vUsZxoHS4"; // 100% front-end não consegui esconder a apikey, tentei usar o doenv mas não funciona com 100%front-end
 const container = document.querySelector("#container");
+const search = document.querySelector("#search");
 container.hidden = true;
 const imgGif = document.querySelector("#imgGif");
 const btn = document.querySelector("#btn");
+
+btn.addEventListener("click", () => getShareGif());
+search.addEventListener("keypress", (e) => enterKey(e));
 
 function getShareGif() {
   const search = document.querySelector("#search").value;
@@ -12,6 +16,13 @@ function getShareGif() {
     return alert("Digite um valor!");
   }
 }
+
+function enterKey(e) {
+  if (e.key === "Enter") {
+    return getShareGif();
+  }
+}
+
 async function getData(search) {
   try {
     const url = "https://tenor.googleapis.com/v2/search?q=";
@@ -43,4 +54,3 @@ async function addData(data) {
   console.log(urlGif);
   return (imgGif.src = urlGif);
 }
-btn.addEventListener("click", () => getShareGif());

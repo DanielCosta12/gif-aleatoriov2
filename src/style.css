@@ -11,16 +11,26 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: rgb(119, 155, 245);
+  /* background-color: rgb(119, 155, 245); */
+  background-color: white;
 }
 
 main {
+  width: 100%;
   text-align: center;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+#container-left {
+  width: 50%;
+}
+#container-right {
+  width: 50%;
 }
 h1 {
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.5em;
   color: rgb(37, 33, 33);
   margin-bottom: 2rem;
   align-items: center;
@@ -44,4 +54,20 @@ img {
   width: 320px;
   height: 320px;
   border-radius: 3px;
+}
+#img-right {
+  margin-top: 100px;
+}
+
+@media (max-width: 600px) {
+  #container-right {
+    display: none;
+  }
+  #container-left {
+    width: 100%;
+  }
+}
+
+footer {
+  padding-top: 10rem;
 }
