@@ -66,6 +66,9 @@ img {
   #container-left {
     width: 100%;
   }
+  footer {
+    display: none;
+  }
 }
 
 footer {
