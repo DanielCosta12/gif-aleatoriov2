@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyDZeBxnHRZXj4kRHcDuJW57y2vUsZxoHS4"; // 100% front-end não consegui esconder a apikey, tentei usar o doenv mas não funciona com 100%front-end
+import API_KEY from "./apikey.js";
 const container = document.querySelector("#container");
 const search = document.querySelector("#search");
 container.hidden = true;
